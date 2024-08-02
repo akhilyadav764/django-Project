@@ -41,12 +41,7 @@ def about(request):
 		}
 	return render(request, 'about.html', parms)
 
-def post(request, id, slug):
-	try:
-		post = Post.objects.get(pk=id, slug=slug)
-	except:
-		raise Http404("Post Does Not Exist")	
-
+def post(request):
 	post.read+=1
 	post.save()
 

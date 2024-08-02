@@ -22,8 +22,6 @@ class Categorie(models.Model):
 class Post(models.Model):
 	title = models.CharField(max_length = 50)
 	overview = models.TextField()
-	slug = models.SlugField(null=True, blank=True)
-	
 	time_upload = models.DateTimeField(auto_now_add = True)
 	auther = models.ForeignKey(Author, on_delete=models.CASCADE)
 	thumbnail = models.ImageField(upload_to = 'thumbnails')
